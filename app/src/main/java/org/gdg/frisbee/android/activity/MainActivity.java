@@ -44,6 +44,7 @@ import org.gdg.frisbee.android.app.App;
 import org.gdg.frisbee.android.cache.ModelCache;
 import org.gdg.frisbee.android.fragment.EventFragment;
 import org.gdg.frisbee.android.fragment.InfoFragment;
+import org.gdg.frisbee.android.fragment.LeadFragment;
 import org.gdg.frisbee.android.fragment.NewsFragment;
 import org.gdg.frisbee.android.fragment.SeasonsGreetingsFragment;
 import org.gdg.frisbee.android.utils.ChapterComparator;
@@ -338,7 +339,11 @@ public class MainActivity extends GdgNavDrawerActivity implements ActionBar.OnNa
 
         @Override
         public int getCount() {
-            return 3;
+            if (App.getInstance().isOrganizer()) {
+                return 4;
+            } else {
+                return 3;
+            }
         }
 
         @Override
@@ -351,6 +356,8 @@ public class MainActivity extends GdgNavDrawerActivity implements ActionBar.OnNa
                     return InfoFragment.newInstance(gplusId);
                 case 2:
                     return EventFragment.newInstance(gplusId);
+                case 3:
+                    return LeadFragment.newInstance(gplusId);
             }
             return null;
         }
@@ -364,6 +371,8 @@ public class MainActivity extends GdgNavDrawerActivity implements ActionBar.OnNa
                     return mContext.getText(R.string.info);
                 case 2:
                     return mContext.getText(R.string.events);
+                case 3:
+                    return mContext.getText(R.string.for_leads);
             }
             return "";
         }

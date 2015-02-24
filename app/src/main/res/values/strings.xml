@@ -153,4 +153,7 @@
     <string name="event_agenda">Agenda</string>
     <string name="event_more">More</string>
     <string name="help">Help</string>
+    <string name="for_leads">For Leads</string>
+    <string name="leads_welcome">Congrats for being a GDG organizer!\n\nYou should check the GDG resource at https://drive.google.com/drive/#folders/0B55wxScz_BJtWW9aUnk2LUlNdEk
+    and the GDG Wisdom pages at https://sites.google.com/site/gdgwisdom/</string>
 </resources>
