@@ -31,6 +31,7 @@ import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.instabug.library.Instabug;
 import com.squareup.picasso.LruCache;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -95,6 +96,8 @@ public class App extends Application implements LocationListener {
             Fabric.with(this, new Crashlytics());
             Timber.plant(new CrashlyticsTree());
         }
+
+        Instabug.initialize(this, BuildConfig.INSTABUG_APP_KEY);
 
         mInstance = this;
 
