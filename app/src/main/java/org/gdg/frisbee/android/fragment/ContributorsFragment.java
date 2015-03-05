@@ -43,28 +43,14 @@ import java.util.ArrayList;
 import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
-import timber.log.Timber;
 
 public class ContributorsFragment extends GdgListFragment {
 
     protected ContributorAdapter mAdapter;
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        Timber.d("onSaveInstanceState()");
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Timber.d("onResume()");
-    }
-
-    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Timber.d("onActivityCreated()");
 
         mAdapter = new ContributorAdapter(getActivity());
         setListAdapter(mAdapter);
@@ -117,16 +103,9 @@ public class ContributorsFragment extends GdgListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Timber.d("onCreateView()");
         View v = inflater.inflate(R.layout.fragment_gde_list, container, false);
         ButterKnife.inject(this, v);
         return v;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Timber.d("onStart()");
     }
 
     @Override
